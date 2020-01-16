@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Character from "./Character";
+import gif from "../loadinfo.net.gif";
 
 class App extends Component {
 	state = {
@@ -38,23 +39,24 @@ class App extends Component {
 
 	render() {
 		let {isLoading, characters} = this.state;
-		let content;
 		if (isLoading) {
-			content = <h1>Loading...</h1>;
+			return (
+				<div className='loading'>
+					<img src={gif} alt='loading...'></img>
+				</div>
+			);
 		} else {
-			content = (
-				<>
+			return (
+				<div className='flex'>
 					<h1>star wars characters</h1>
 					<ul>
 						{characters.map((character, index) => {
 							return <Character key={index} character={character} />;
 						})}
 					</ul>
-				</>
+				</div>
 			);
 		}
-
-		return <div className='flex'>{content}</div>;
 	}
 }
 

@@ -1,5 +1,21 @@
 body {
 	background-color: #313038;
+	margin: 0;
+}
+
+#root {
+	width: 100%;
+}
+
+.loading {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
 }
 
 h1 {
